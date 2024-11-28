@@ -5,6 +5,6 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
-constexpr int CELL_SIZE = 100;
+constexpr int CELL_SIZE = 40;
 
 #endif //CONSTANTS_H

@@ -56,6 +56,29 @@ int Grid::countAdjacentMines(const int row, const int col) const {
     return count;
 }
 
+void Grid::revealCell(const int row, const int col) {
+    if (row < 0 || row >= rows || col < 0 || col >= cols) return; // Out of bounds check
+    Cell& cell = cells[row][col];
+
+    // If the cell is already revealed or marked, do nothing
+    if (cell.state == Cell::Revealed || cell.state == Cell::Marked)
+        return;
+
+    // Reveal the cell
+    cell.reveal();
+
+    // If the cell has no adjacent mines, recursively reveal its neighbors
+    if (cell.adjacentMines == 0) {
+        // Reveal all adjacent cells (neighbors)
+        for (int dr = -1; dr <= 1; ++dr) {
+            for (int dc = -1; dc <= 1; ++dc) {
+                if (dr == 0 && dc == 0) continue; // Skip the current cell
+                revealCell(row + dr, col + dc); // Recursively reveal neighbors
+            }
+        }
+    }
+}
+
 // draw the grid
 void Grid::draw(sf::RenderWindow& window, sf::Font& font) const {
     for (int r { 0 }; r < rows; ++r) {

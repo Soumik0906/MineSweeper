@@ -20,6 +20,7 @@ public:
     Grid(int rows, int cols, int totalMines);
 
     void draw(sf::RenderWindow& window, sf::Font& font) const;
+    void revealCell(int row, int col);
     Cell& getCellAt(int row, int col);
     [[nodiscard]] int getRows() const;
     [[nodiscard]] int getCols() const;

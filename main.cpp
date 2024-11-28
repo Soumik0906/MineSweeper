@@ -4,9 +4,9 @@
 #include <iostream>
 
 int main() {
-    constexpr int GRID_ROWS = 10;
-    constexpr int GRID_COLS = 10;
-    constexpr int totalMines = 3;
+    constexpr int GRID_ROWS = 20;
+    constexpr int GRID_COLS = 20;
+    constexpr int totalMines = 35;
 
     sf::RenderWindow window(sf::VideoMode(GRID_COLS * CELL_SIZE, GRID_ROWS * CELL_SIZE), "Minesweeper");
     sf::Font font;

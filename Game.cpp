@@ -16,7 +16,7 @@ void Game::handleInput(const sf::Event& event) {
 
         if (row >= 0 && row < grid.getRows() && col >= 0 && col < grid.getCols()) {
             if (event.mouseButton.button == sf::Mouse::Left) {
-                grid.getCellAt(row, col).reveal();
+                grid.revealCell(row, col);
                 if (grid.getCellAt(row, col).isMine) {
                     state = Lost;
                 }
@@ -48,8 +48,8 @@ void Game::draw(sf::RenderWindow& window, sf::Font& font) {
     grid.draw(window, font);
 
     if (state == Lost) {
-        std::cout << "Lost" << std::endl;
+        std::cout << "LOST" << std::endl;
     } else if (state == Won) {
-        std::cout << "Won" << std::endl;
+        std::cout << "WON" << std::endl;
     }
 }
