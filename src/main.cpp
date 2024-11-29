@@ -10,7 +10,7 @@ int main() {
 
     sf::RenderWindow window(sf::VideoMode(GRID_COLS * CELL_SIZE, GRID_ROWS * CELL_SIZE), "Minesweeper");
     sf::Font font;
-    if (!font.loadFromFile("resources/Arial.ttf")) {
+    if (!font.loadFromFile("../resources/Arial.ttf")) {
         std::cerr << "Failed to load font." << std::endl;
         return -1;
     }

@@ -1,0 +1,22 @@
+# Build folders
+build/
+cmake-build-debug/
+
+# CLion/IDE files
+.clang-format
+.idea/
+*.iml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Binary files
+*.o
+*.so
+*.out
+*.a
+
+# Temporary files
+*.log
+*.tmp
