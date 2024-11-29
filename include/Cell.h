@@ -21,7 +21,7 @@ public:
 
     // Methods
     void reveal();
-    void mark();
+    void toggle();
 };
 
 #endif // CELL_H

@@ -11,6 +11,6 @@ void Cell::reveal()  {
   state = Revealed;
 }
 
-void Cell::mark() {
-    state = (state == Hidden) ? Hidden : Marked;
+void Cell::toggle() {
+    state = (state == Hidden) ? Marked : Hidden;
 }

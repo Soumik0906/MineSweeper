@@ -21,7 +21,9 @@ void Game::handleInput(const sf::Event& event) {
                     state = Lost;
                 }
             } else if (event.mouseButton.button == sf::Mouse::Right) {
-                grid.getCellAt(row, col).mark();
+                if (grid.getCellAt(row, col).state != Cell::Revealed) {
+                    grid.getCellAt(row, col).toggle();
+                }
             }
         }
     }
