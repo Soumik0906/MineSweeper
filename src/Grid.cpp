@@ -5,6 +5,13 @@
 #include "../include/Constants.h"
 #include <random>
 
+sf::Color hexToColor(const std::string& color) {
+    const unsigned r = std::stoi(color.substr(1, 2), nullptr, 16);
+    const unsigned g = std::stoi(color.substr(3, 2), nullptr, 16);
+    const unsigned b = std::stoi(color.substr(5, 2), nullptr, 16);
+    return sf::Color(r, g, b);
+}
+
 Grid::Grid(const int rows, const int cols, const int totalMines)
     : rows(rows), cols(cols), totalMines(totalMines) {
     cells.resize(rows, std::vector<Cell>(cols, Cell(0, 0)));
@@ -83,14 +90,14 @@ void Grid::draw(sf::RenderWindow& window, sf::Font& font) const {
             cellShape.setPosition(c * CELL_SIZE, r * CELL_SIZE);
 
             if (cells[r][c].state == Cell::Revealed) {
-                cellShape.setFillColor(sf::Color::White);
+                cellShape.setFillColor(hexToColor("#c2c2be"));
                 if (cells[r][c].isMine) {
                     cellShape.setFillColor(sf::Color::Red);
                 }
             } else if (cells[r][c].state == Cell::Marked) {
-                cellShape.setFillColor(sf::Color::Blue);
+                cellShape.setFillColor(hexToColor("#cbdb9c"));
             } else {
-                cellShape.setFillColor(sf::Color::Green);
+                cellShape.setFillColor(hexToColor("#4c5457"));
             }
 
             window.draw(cellShape);
