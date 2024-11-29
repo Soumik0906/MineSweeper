@@ -46,7 +46,7 @@ void Game::update() {
     }
 }
 
-void Game::draw(sf::RenderWindow& window, sf::Font& font) {
+void Game::draw(sf::RenderWindow& window, sf::Font& font) const {
     grid.draw(window, font);
 
     if (state == Lost) {

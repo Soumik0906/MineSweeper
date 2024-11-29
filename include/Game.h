@@ -19,7 +19,7 @@ public:
     // Methods
     void handleInput(const sf::Event& event);
     void update();
-    void draw(sf::RenderWindow& window, sf::Font& font);
+    void draw(sf::RenderWindow& window, sf::Font& font) const;
 };
 
 #endif //GAME_H
