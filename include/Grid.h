@@ -1,7 +1,8 @@
 //
 // Created by soumik on 11/28/24.
 //
-#pragma once
+#ifndef GRID_H
+#define GRID_H
 
 #include "Cell.h"
 #include <vector>
@@ -26,3 +27,5 @@ public:
     [[nodiscard]] int getCols() const;
     [[nodiscard]] int getMines() const;
 };
+
+#endif

@@ -1,12 +1,8 @@
 //
 // Created by soumik on 11/28/24.
 //
-
-#ifndef GRID_H
-#define GRID_H
-
-#include "Grid.h"
-#include "Constants.h"
+#include "../include/Grid.h"
+#include "../include/Constants.h"
 #include <random>
 
 Grid::Grid(const int rows, const int cols, const int totalMines)
@@ -136,5 +132,3 @@ int Grid::getCols() const {
 int Grid::getMines() const {
     return totalMines;
 }
-
-#endif
