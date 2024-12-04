@@ -1,8 +1,8 @@
 //
 // Created by soumik on 11/28/24.
 //
-#include "../include/Grid.h"
-#include "../include/Constants.h"
+#include "Grid.h"
+#include "Constants.h"
 #include <random>
 
 sf::Color hexToColor(const std::string& color) {

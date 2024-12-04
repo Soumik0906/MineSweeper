@@ -2,9 +2,9 @@
 // Created by soumik on 11/28/24.
 //
 
-#include "../include/Game.h"
+#include "Game.h"
 #include <iostream>
-#include "../include/Constants.h"
+#include "Constants.h"
 
 Game::Game(const int rows, const int cols, const int totalMines)
     : grid(rows, cols, totalMines), state(Playing) {}
